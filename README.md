@@ -21,7 +21,7 @@ Create a Book Category app where users can add, edit, and delete books items in 
   <li><code>cd /vagrant </code>to change to your vagrant directory</li>
   <li>Move inside the catalog folder <code>cd /vagrant/catalog</code></li>
   <li>Initialize the database <code>$ Python database_setup.py</code></li>
-  <li>Populate the database with some initial data <code>$ Python menus.py</code></li>
+  <li>Populate the database with some initial data <code>$ Python seeds.py</code></li>
   <li>Run <code>python project.py</code></li>
   <li>Browse the App at this URL <code>http://localhost:8000</code></li>
 </ul>
