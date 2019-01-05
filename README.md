@@ -35,6 +35,8 @@ Create a Book Category app where users can add, edit, and delete books items in 
 
 <strong>Returns JSON of item setails in a specific category</strong>
 <pre><code>/catalog/<int:item_id>/itemdetails/json</code></pre>
+<pre><code>/restaurants/&lt;int:restaurant_id&gt;/menu/JSON
+</code></pre>
 
 
 <h3>Helpful Resources</h3>
