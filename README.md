@@ -193,3 +193,14 @@ $ sudo pip install sqlalchemy_utils
 
 <p>Deactivate the virtual environment by the command <strong>deactivate</strong></p>
 
+<p>change to the <strong>/var/www/catalog/catalog</strong> directory</p>
+<p>Rename the project.py to __init__.py <code>mv project.py __init__.py</code></p>
+<p>update the path of the client_secrets.json file <strong>/var/www/catalog/catalog/client_secrets.json</strong></p>
+<p>change <strong>app.run(host='0.0.0.0', ort=8000, debug=True)</strong> to <strong>app.run()</strong></p>
+<p>Run database and seeds files <strong>python database_setup.py  python seeds.py</strong></p>
+
+<h3>Setup and enble a virtual host</h3>
+<ol>
+<li>Create file: <code>$ sudo touch /etc/apache2/sites-available/catalog.conf</code></li>
+<li>Add the following to the file:</li>
+</ol>
