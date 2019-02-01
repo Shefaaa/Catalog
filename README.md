@@ -159,7 +159,7 @@ host    all             all             ::1/128                 md5
 <li>Change the ownership: <code>$ sudo chown -R grader:grader catalog/</code></li>  
 <li>Clone the catalog app: <code>$ sudo git clone Repository-URL catalog</code></li> 
 </ol>
-<p><strong>create .wsg file </strong> <code>sudo nano catalog.wsgi</code></p>
+<p><strong>create .wsg file </strong> <code>$ sudo nano catalog.wsgi</code></p>
 <pre lang="$"><code> 
 import sys
 import logging
@@ -169,4 +169,27 @@ from catalog import app as application
 application.secret_key = 'super_secret_key'
 </code>
 </pre>
+
+<p><strong>create the virtual environment </strong></p>
+<pre lang="$"><code> 
+$ sudo pip install virtualenv
+$ sudo vitrualenv venv
+$ source venv/bin/activate
+$ sudo chmod -R 777 venv
+</code>
+</pre>
+
+<p><strong>Install the required package for the Flask </strong></p>
+<pre lang="$"><code> 
+$ sudo apt-get install python-pip
+$ sudo pip install flask
+$ sudo pip install httplib2 oauth2client sqlalchemy psycopg2
+$ sudo pip install requests
+$ sudo pip install --upgrade oauth2client
+$ sudo apt-get install libpq-dev
+$ sudo pip install sqlalchemy_utils
+</code>
+</pre>
+
+<p>Deactivate the virtual environment by the command <strong>deactivate</strong></p>
 
