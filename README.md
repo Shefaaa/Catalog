@@ -104,5 +104,73 @@ In this project, the Catalog Item Web Application Project will be hosted by a Ub
 <li>Run <code>timedatectl set-timezone UTC</code> to set timezone to UTC</li>
 </ol>
 
+<h3>Install and configure Apache and pthon mod_wsgi</h3>
+<ol>
+<li>Run <code>$ sudo apt-get install apache2</code> to install apache2</li>
+<li>Go to <a href="http://13.232.218.51" rel="nofollow">http://13.232.218.51/</a>, if Apache is working correctly, a <strong>Apache2 Ubuntu Default Page</strong> will show up</li>
+<li>Run <code>$ sudo apt-get install libapache2-mod-wsgi python-dev</code> To Install the mod_wsgi</li>
+<li>Run <code>$ sudo a2enmod wsgi</code> To Enable mod_wsgi</li>
+<li>Run <code>$ sudo service apache2 restart</code> To Restart Apache</li>
+<li>Run <code>$ python</code> To Check if Python is installed</li>  
+</ol>
 
- 
+<h3>Install PostgreSQL</h3>
+<ol>
+<li>Run <code>$ sudo apt-get install postgresql</code></li>
+<li>Make sure PostgreSQL does not allow remote connections</li>
+<li>Open file: <code>$ sudo nano /etc/postgresql/9.5/main/pg_hba.conf</code></li>
+<li>Check to make sure it looks like this:
+<pre><code># Database administrative login by Unix domain socket
+local   all             postgres                                peer
+
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+
+# "local" is for Unix domain socket connections only
+local   all             all                                     peer
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            md5
+# IPv6 local connections:
+host    all             all             ::1/128                 md5
+</code></pre>
+</li>
+</ol>
+
+<h3>Create new PostgreSQL user called catalog</h3>
+<ol>
+<li>Run <code>$ sudo su - postgres</code> To Switch to PostgreSQL defualt user postgres</li>
+<li>Run <code>$ psql</code> To Connect to PostgreSQL</li>
+<li>Create user <strong>catalog</strong> with LOGIN role: <code># CREATE ROLE catalog WITH PASSWORD 'catalogdb';</code></li>
+<li>Allow user to create database tables: <code># ALTER USER catalog CREATEDB;</code></li>
+<li>Create database: <code># CREATE DATABASE catalog WITH OWNER catalog;</code></li>
+<li>Connect to database <strong>catalog</strong>: <code># \c catalog</code></li>
+<li>Revoke all the rights: <code># REVOKE ALL ON SCHEMA public FROM public;</code></li>
+<li>Grant access to <strong>catalog</strong>: <code># GRANT ALL ON SCHEMA public TO catalog;</code></li>
+<li>Exit psql: <code>\q</code>
+10.Exit user <strong>postgres</strong>: <code>exit</code></li>
+</ol>
+
+<h3>Install git</h3>
+<p>Run <code>$ sudo apt-get install git</code> To install git</p>
+
+<h3>Clone and setup the Item Catalog Project</h3>
+<ol>
+<li>Create dictionary: <code>$ mkdir /var/www/catalog</code></li>
+<li>CD to this directory: <code>$ cd /var/www/catalog</code></li>
+<li>Change the ownership: <code>$ sudo chown -R grader:grader catalog/</code></li>  
+<li>Clone the catalog app: <code>$ sudo git clone Repository-URL catalog</code></li>
+<li>create .wsg file <code>sudo nano catalog.wsgi</code>
+  <ul>
+    <li><em>
+      <code>
+        import sys
+        import logging
+logging.basicConfig(stream=sys.stderr)
+sys.path.insert(0, "/var/www/catalog")
+from catalog import app as application
+application.secret_key = 'super_secret_key'
+      </code>
+      </em></li>
+  </ul>
+  </li>
+</ol>
+
