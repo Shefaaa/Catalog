@@ -204,3 +204,27 @@ $ sudo pip install sqlalchemy_utils
 <li>Create file: <code>$ sudo touch /etc/apache2/sites-available/catalog.conf</code></li>
 <li>Add the following to the file:</li>
 </ol>
+<pre><code>   &lt;VirtualHost *:80&gt;
+		ServerName XX.XX.XX.XX
+		ServerAdmin admin@xx.xx.xx.xx
+		WSGIScriptAlias / /var/www/catalog/catalog.wsgi
+		&lt;Directory /var/www/catalog/catalog/&gt;
+			Order allow,deny
+			Allow from all
+			Options -Indexes
+		&lt;/Directory&gt;
+		Alias /static /var/www/catalog/catalog/static
+		&lt;Directory /var/www/catalog/catalog/static/&gt;
+			Order allow,deny
+			Allow from all
+			Options -Indexes
+		&lt;/Directory&gt;
+		ErrorLog ${APACHE_LOG_DIR}/error.log
+		LogLevel warn
+		CustomLog ${APACHE_LOG_DIR}/access.log combined
+   &lt;/VirtualHost&gt;
+</code></pre>
+<ol start="3">
+<li>Run <code>$ sudo a2ensite catalog</code> to enable the virtual host</li>
+<li>Restart <strong>Apache</strong>: <code>$ sudo service apache2 reload</code></li>
+</ol>
