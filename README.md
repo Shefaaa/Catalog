@@ -158,9 +158,9 @@ host    all             all             ::1/128                 md5
 <li>CD to this directory: <code>$ cd /var/www/catalog</code></li>
 <li>Change the ownership: <code>$ sudo chown -R grader:grader catalog/</code></li>  
 <li>Clone the catalog app: <code>$ sudo git clone Repository-URL catalog</code></li>
-<li>create .wsg file <code>sudo nano catalog.wsgi</code>
+  <li>create .wsg file <code>sudo nano catalog.wsgi</code></li>
   <ul>
-    <li><em>
+    <pre lang="$"><code> 
       <code>
         import sys
         import logging
@@ -169,8 +169,7 @@ sys.path.insert(0, "/var/www/catalog")
 from catalog import app as application
 application.secret_key = 'super_secret_key'
       </code>
-      </em></li>
+      </pre>
   </ul>
-  </li>
 </ol>
 
