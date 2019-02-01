@@ -7,7 +7,7 @@ In this project, the Catalog Item Web Application Project will be hosted by a Ub
 </ul>
 <h3>Create instance on Amazon Lightsail</h3>
 <ol>
-<li>Create an AWS account</li>
+<li>Create an AWS account on <a href="https://lightsail.aws.amazon.com">Lightsail</a></li>
 <li>Click <strong>Create instance</strong> button on the home page</li>
 <li>Select <strong>Linux/Unix</strong> platform</li>
 <li>Select <strong>OS Only</strong> and <strong>Ubuntu</strong>Platform</li>
