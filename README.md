@@ -1,14 +1,20 @@
 
-# Catalog App Project
-Create a Book Category app where users can add, edit, and delete books items in the App.
-
-<h3>Technologies Used</h3>
+# Linux-Server-Configuration Project
+In this project, the Catalog Item Web Application Project will be hosted by a Ubuntu Linux server on an Amazon Lightsail instance. A series of instructions will be presented below. You can visit <a href="http://ec2-13-232-218-51.ap-south-1.compute.amazonaws.com">http://ec2-13-232-218-51.ap-south-1.compute.amazonaws.com/</a> for the deployed website.
 <ul>
-  <li><a href="https://www.python.org/" target="_blank">Python 2.7 </a>- Language the project is coded in</li>
-  <li><a href="https://www.vagrantup.com/" target="_blank">Vagrant </a>- For a dev VM</li>
-  <li><a href="https://www.virtualbox.org/" target="_blank">VirtualBox </a>- Required for Vagrant</li>
-  <li><a href="https://git-scm.com/" target="_blank">Git </a>- Source code management</li>
+  <li>Public IP address: 13.232.218.51</li>
+  <li>SSH port: 2200</li>
 </ul>
+<h3>Create instance on Amazon Lightsail</h3>
+<ol>
+<li>Create an AWS account</li>
+<li>Click <strong>Create instance</strong> button on the home page</li>
+<li>Select <strong>Linux/Unix</strong> platform</li>
+<li>Select <strong>OS Only</strong> and <strong>Ubuntu</strong>Platform</li>
+<li>Select an instance plan</li>
+<li>Name your instance</li>
+<li>Click <strong>Create</strong> button and wait for the instance to run</li>
+</ol>
 
 
 <h3>System setup and how to view this project</h3>
