@@ -123,14 +123,14 @@ In this project, the Catalog Item Web Application Project will be hosted by a Ub
 <pre><code># Database administrative login by Unix domain socket
 local   all             postgres                                peer
 
-# TYPE  DATABASE        USER            ADDRESS                 METHOD
+# TYPE  DATABASE   USER   ADDRESS            METHOD
 
 # "local" is for Unix domain socket connections only
-local   all             all                                     peer
+local   all        all                       peer
 # IPv4 local connections:
-host    all             all             127.0.0.1/32            md5
+host    all        all     127.0.0.1/32      md5
 # IPv6 local connections:
-host    all             all             ::1/128                 md5
+host    all        all     ::1/128           md5
 </code></pre>
 </li>
 </ol>
