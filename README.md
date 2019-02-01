@@ -22,7 +22,7 @@ In this project, the Catalog Item Web Application Project will be hosted by a Ub
 <li>Download private key from the <strong>SSH keys</strong> section in the <strong>Account</strong> section on Amazon Lightsail.</li>
 <li>Move the downloaded private key file into the local folder ~/.ssh and rename it as <strong>lightsail_key.pem</strong> </li>
 <li>Set file permission as owner only : <code>$ chmod 600 ~/.ssh/lightsail_key.pem</code></li>
-<li>Connect to the instance via SSH: <code>$ ssh -i ~/.ssh/lightsail_key.rsa ubuntu@13.232.218.51</code></li>
+<li>Connect to the instance via SSH: <code>$ ssh -i ~/.ssh/lightsail_key.pem ubuntu@13.232.218.51</code></li>
 </ol>
 
 <h3>Update all installed packages on the Server</h3>
